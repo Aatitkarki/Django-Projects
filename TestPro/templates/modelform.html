@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+
+{%block title%}Modal Form{%endblock%}
+{%block body%}
+<h1>Modal Form Registration</h1>
+<form action="{%url 'addmodelform'}" method="POST">
+{%csrf_token%}
+    {{modelform}}
+    <input type="submit" class="btn btn-success" value="Register">
+</form>
+
+{%endblock%}

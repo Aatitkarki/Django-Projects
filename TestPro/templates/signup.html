@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+
+{%block title%}
+Register
+{%endblock%}
+
+{%block body%}
+
+<h1>SignUp form</h1>
+
+<form action="{%url 'addUser'%}" method="POST">
+    {%csrf_token%}
+    <ul class="messages">
+        {%for msg in messages%}
+            <li>
+                <div class="alert alert-{{msg.level_tag}}" role="alert">
+                    {{msg.message}}
+                </div>
+            </li>
+        {%endfor%}
+    </ul>
+    
+    <form>
+        <div class="form-group">
+            <label >User Name</label>
+            {{form.username}}
+          </div>
+          <div class="form-group">
+            <label >Email address</label>
+            {{form.email}}
+          </div>
+          <div class="form-group">
+            <label >Password</label>
+            {{form.password}}
+          </div>
+          <div class="form-group">
+            <label >Phone</label>
+            {{form.phone}}
+          </div>
+        
+
+        
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+
+</form>
+{%endblock%}
